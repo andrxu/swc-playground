@@ -1,0 +1,3 @@
+Import: ImportDecl { span: 166..232, specifiers: [Named(ImportNamedSpecifier { span: 175..203, local: Ident { span: 187..203, ctxt: #0, sym: "importedGreeting", optional: false }, imported: Some(Ident(Ident { span: 175..183, ctxt: #0, sym: "greeting", optional: false })), is_type_only: false })], src: Str { span: 211..231, value: "./anotherModule.js", raw: Some("'./anotherModule.js'") }, type_only: false, with: None, phase: Evaluation }
+Function: Ident { span: 243..248, ctxt: #0, sym: "greet", optional: false }
+Export default: ExportDefaultExpr { span: 354..375, expr: Ident(Ident { span: 369..374, ctxt: #0, sym: "greet", optional: false }) }
