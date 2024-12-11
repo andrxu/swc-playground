@@ -1,0 +1,211 @@
+Module {
+    span: 69..415,
+    body: [
+        ModuleDecl(
+            ExportDecl(
+                ExportDecl {
+                    span: 69..109,
+                    decl: Var(
+                        VarDecl {
+                            span: 76..109,
+                            ctxt: #0,
+                            kind: "const",
+                            declare: false,
+                            decls: [
+                                VarDeclarator {
+                                    span: 82..108,
+                                    name: Ident(
+                                        BindingIdent {
+                                            id: Ident {
+                                                span: 82..90,
+                                                ctxt: #0,
+                                                sym: "greeting",
+                                                optional: false,
+                                            },
+                                            type_ann: None,
+                                        },
+                                    ),
+                                    init: Some(
+                                        Lit(
+                                            Str(
+                                                Str {
+                                                    span: 93..108,
+                                                    value: "Hello, World!",
+                                                    raw: Some(
+                                                        "\"Hello, World!\"",
+                                                    ),
+                                                },
+                                            ),
+                                        ),
+                                    ),
+                                    definite: false,
+                                },
+                            ],
+                        },
+                    ),
+                },
+            ),
+        ),
+        ModuleDecl(
+            Import(
+                ImportDecl {
+                    span: 166..232,
+                    specifiers: [
+                        Named(
+                            ImportNamedSpecifier {
+                                span: 175..203,
+                                local: Ident {
+                                    span: 187..203,
+                                    ctxt: #0,
+                                    sym: "importedGreeting",
+                                    optional: false,
+                                },
+                                imported: Some(
+                                    Ident(
+                                        Ident {
+                                            span: 175..183,
+                                            ctxt: #0,
+                                            sym: "greeting",
+                                            optional: false,
+                                        },
+                                    ),
+                                ),
+                                is_type_only: false,
+                            },
+                        ),
+                    ],
+                    src: Str {
+                        span: 211..231,
+                        value: "./anotherModule.js",
+                        raw: Some(
+                            "'./anotherModule.js'",
+                        ),
+                    },
+                    type_only: false,
+                    with: None,
+                    phase: Evaluation,
+                },
+            ),
+        ),
+        Stmt(
+            Decl(
+                Fn(
+                    FnDecl {
+                        ident: Ident {
+                            span: 243..248,
+                            ctxt: #0,
+                            sym: "greet",
+                            optional: false,
+                        },
+                        declare: false,
+                        function: Function {
+                            params: [],
+                            decorators: [],
+                            span: 234..320,
+                            ctxt: #0,
+                            body: Some(
+                                BlockStmt {
+                                    span: 251..320,
+                                    ctxt: #0,
+                                    stmts: [
+                                        Expr(
+                                            ExprStmt {
+                                                span: 257..287,
+                                                expr: Call(
+                                                    CallExpr {
+                                                        span: 257..286,
+                                                        ctxt: #0,
+                                                        callee: Expr(
+                                                            Member(
+                                                                MemberExpr {
+                                                                    span: 257..268,
+                                                                    obj: Ident(
+                                                                        Ident {
+                                                                            span: 257..264,
+                                                                            ctxt: #0,
+                                                                            sym: "console",
+                                                                            optional: false,
+                                                                        },
+                                                                    ),
+                                                                    prop: Ident(
+                                                                        IdentName {
+                                                                            span: 265..268,
+                                                                            sym: "log",
+                                                                        },
+                                                                    ),
+                                                                },
+                                                            ),
+                                                        ),
+                                                        args: [
+                                                            ExprOrSpread {
+                                                                spread: None,
+                                                                expr: Ident(
+                                                                    Ident {
+                                                                        span: 269..285,
+                                                                        ctxt: #0,
+                                                                        sym: "importedGreeting",
+                                                                        optional: false,
+                                                                    },
+                                                                ),
+                                                            },
+                                                        ],
+                                                        type_args: None,
+                                                    },
+                                                ),
+                                            },
+                                        ),
+                                    ],
+                                },
+                            ),
+                            is_generator: false,
+                            is_async: false,
+                            type_params: None,
+                            return_type: None,
+                        },
+                    },
+                ),
+            ),
+        ),
+        ModuleDecl(
+            ExportDefaultExpr(
+                ExportDefaultExpr {
+                    span: 354..375,
+                    expr: Ident(
+                        Ident {
+                            span: 369..374,
+                            ctxt: #0,
+                            sym: "greet",
+                            optional: false,
+                        },
+                    ),
+                },
+            ),
+        ),
+        Stmt(
+            Expr(
+                ExprStmt {
+                    span: 407..415,
+                    expr: Call(
+                        CallExpr {
+                            span: 407..414,
+                            ctxt: #0,
+                            callee: Expr(
+                                Ident(
+                                    Ident {
+                                        span: 407..412,
+                                        ctxt: #0,
+                                        sym: "greet",
+                                        optional: false,
+                                    },
+                                ),
+                            ),
+                            args: [],
+                            type_args: None,
+                        },
+                    ),
+                },
+            ),
+        ),
+    ],
+    shebang: None,
+}
